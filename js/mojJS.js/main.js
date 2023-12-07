@@ -2,7 +2,7 @@
 
 var nizNavigacioniMeniHref = ["index.html","about.html","games.html","tranner.html","contact.html"];
 var nizNavigacioniMeniTekst = ["Pocetna2","O nama","Utakmice","Treneri","Kontakt"];
-
+console.log("Navigacioni Meni:\t", nizNavigacioniMeniTekst)
 var navigacioniMeniHTML = document.querySelector("#mySidepanel");
 
 
