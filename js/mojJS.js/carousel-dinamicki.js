@@ -39,7 +39,7 @@ for (let i = 0; i < nizCarouselSlikaSrc.length; i++) {
 	tagA.setAttribute("class", "read_more");
 	tagA.setAttribute("href", "Javascript:void(0)");
 
-	let sadrzajtagaA = document.createTextNode("Read More");
+	let sadrzajtagaA = document.createTextNode("Pročitajte više");
 	tagA.append(sadrzajtagaA);
 
 	tagFigure.appendChild(tagImg);
