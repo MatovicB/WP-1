@@ -57,6 +57,8 @@ nizKontaktFooterText = ["Call +01 1234567890", "demo@gmail.com"];
 nizKontaktFooterSrc = ["images/call.png", "images/mall.png"];
 nizKontaktFooterAlt = ["Slika telefona", "Slika email-a"];
 
+let btnProvera = document.getElementById("btnProvera") || null;
+
 let ispisKontaktFooter = "";
 for (let i = 0; i < nizKontaktFooterText.length; i++) {
 	ispisKontaktFooter += `<li>
@@ -149,9 +151,6 @@ tagzaIspisNavMeniFooter.innerHTML = ispisNavigacioniMeniFooter;
 console.log(document.getElementById("ispisFootera"));
 
 /* Kontakt */
-
-document.getElementById("btnProvera").addEventListener("click", proveriFormu);
-
 nizElemenataForme = ["tbImePrezime", "tbBrojTelefona", "tbEmail", "tbTextArea"];
 
 function proveriFormu() {
@@ -187,6 +186,10 @@ function proveriFormu() {
 	// Ako sve provere prođu, nema greške
 	ispisiGresku("Forma je uspešno popunjena.", false);
 	prikaziPopup(!greska);
+}
+
+if (btnProvera) {
+	btnProvera.addEventListener("click", proveriFormu);
 }
 
 function ispisiGresku(tekst, greska = true) {
