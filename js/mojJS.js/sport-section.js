@@ -7,12 +7,13 @@ let nizSportSlikaSrc = [
 let nizSportSlikaAlt = ["Slika Jiu-Jitse", "Slika Atletike", "Slika Fudbala"];
 let nizSportNaslov = ["Jiu-jitsa", "Atletika", "Fudbal"];
 let nizSportTekst = [
-	"Ovo je tekst sporta 1",
-	"Ovo je tekst sporta 2",
-	"Ovo je tekst sporta 3",
+	"Jiu-jitsu, dinamična borilačka veština, naglašava tehniku i taktičko razmišljanje, pružajući praktične veštine odbrane. ",
+	"Atletika, sa svojom raznolikošću disciplina, ne samo što poboljšava fizičku kondiciju, već podstiče i razvoj discipline, samopouzdanja i upornosti kod praktikanata. ",
+	" Fudbal, najpopularniji globalni sport, ne samo što promoviše fizičku aktivnost i timski duh, već i razvija veštine kao što su brzina, agilnost i sportski duh.",
 ];
 
 let tagZaIspisSporta = document.getElementById("ispisSport");
+console.log(tagZaIspisSporta);
 
 for (let i = 0; i < nizSportNaslov.length; i++) {
 	let divTagColBoot = document.createElement("div");
@@ -43,7 +44,7 @@ for (let i = 0; i < nizSportNaslov.length; i++) {
 	let tagASport = document.createElement("a");
 	tagASport.setAttribute("class", "read_more");
 	tagASport.setAttribute("href", "Javascript:void(0)");
-	let sadrzajtagASport = document.createTextNode("Read more");
+	let sadrzajtagASport = document.createTextNode("Pročitajte više");
 	tagASport.appendChild(sadrzajtagASport);
 
 	divTagSportTekst.appendChild(tagH3Sport);
