@@ -4,6 +4,7 @@ var nizNavigacioniMeniHref = [
 	"games.html",
 	"tranner.html",
 	"contact.html",
+	"dokumentacija.pdf",
 ];
 var nizNavigacioniMeniTekst = [
 	"Pocetna",
@@ -11,8 +12,8 @@ var nizNavigacioniMeniTekst = [
 	"Sportovi",
 	"Treneri",
 	"Kontakt",
+	"Dokumentacija",
 ];
-// console.log("Navigacioni Meni:\t", nizNavigacioniMeniTekst);
 var navigacioniMeniHTML = document.querySelector("#mySidepanel");
 
 var ispisNavigacioniMeni = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>`;
@@ -21,7 +22,6 @@ for (let i = 0; i < nizNavigacioniMeniHref.length; i++) {
     <a href="${nizNavigacioniMeniHref[i]}">${nizNavigacioniMeniTekst[i]}</a>"
     `;
 }
-// console.log(ispisNavigacioniMeni); // Provera
 
 navigacioniMeniHTML.innerHTML = ispisNavigacioniMeni;
 
@@ -83,7 +83,7 @@ divTagRow2.setAttribute("class", "row");
 let divTagColBoot2 = document.createElement("div");
 divTagColBoot2.setAttribute("class", "col-md-8 offset-md-2");
 let tagPFooter = document.createElement("p");
-let sadrzajtagPFooter = document.createTextNode("© 2020 All Rights Reserved.");
+let sadrzajtagPFooter = document.createTextNode("© 2023 All Rights Reserved.");
 tagPFooter.appendChild(sadrzajtagPFooter);
 let tagAFooter = document.createElement("a");
 let sadrzajtagAFooter = document.createTextNode("Boban Matovic 93/20");
@@ -148,8 +148,6 @@ ispisNavigacioniMeniFooter += "</ul>";
 
 tagzaIspisNavMeniFooter.innerHTML = ispisNavigacioniMeniFooter;
 
-console.log(document.getElementById("ispisFootera"));
-
 /* Kontakt */
 nizElemenataForme = ["tbImePrezime", "tbBrojTelefona", "tbEmail", "tbTextArea"];
 
@@ -183,7 +181,6 @@ function proveriFormu() {
 		return;
 	}
 
-	// Ako sve provere prođu, nema greške
 	ispisiGresku("Forma je uspešno popunjena.", false);
 	prikaziPopup(!greska);
 }

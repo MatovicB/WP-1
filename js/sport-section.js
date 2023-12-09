@@ -13,7 +13,6 @@ let nizSportTekst = [
 ];
 
 let tagZaIspisSporta = document.getElementById("ispisSport");
-console.log(tagZaIspisSporta);
 
 for (let i = 0; i < nizSportNaslov.length; i++) {
 	let divTagColBoot = document.createElement("div");
