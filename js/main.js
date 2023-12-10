@@ -167,13 +167,14 @@ function proveriFormu() {
 		return;
 	}
 
-	var regexBrojTelefona = /^\d{10}$/;
+	var regexBrojTelefona =
+		/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{2})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
 	if (!regexBrojTelefona.test(brojTelefona)) {
 		ispisiGresku("Molimo unesite validan broj telefona (10 cifara).");
 		return;
 	}
 
-	var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	var regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 	if (!regexEmail.test(email)) {
 		ispisiGresku("Molimo unesite validnu email adresu.");
 		return;
