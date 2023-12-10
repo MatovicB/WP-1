@@ -53,7 +53,10 @@ divTagContaFooter.setAttribute("class", "conta text_align_center");
 let tagUlContaFooter = document.createElement("ul");
 tagUlContaFooter.setAttribute("id", "ispis_kontakt_footer");
 
-nizKontaktFooterText = ["Call +01 1234567890", "demo@gmail.com"];
+nizKontaktFooterText = [
+	"Pozovite +01 1234567890",
+	"boban.matovic.93.20@ict.edu.rs",
+];
 nizKontaktFooterSrc = ["images/call.png", "images/mall.png"];
 nizKontaktFooterAlt = ["Slika telefona", "Slika email-a"];
 
