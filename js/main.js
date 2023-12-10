@@ -7,7 +7,7 @@ var nizNavigacioniMeniHref = [
 	"dokumentacija.pdf",
 ];
 var nizNavigacioniMeniTekst = [
-	"Pocetna",
+	"Početna",
 	"O autoru",
 	"Sportovi",
 	"Treneri",

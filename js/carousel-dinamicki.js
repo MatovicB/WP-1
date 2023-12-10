@@ -54,4 +54,4 @@ for (let i = 0; i < nizCarouselSlikaSrc.length; i++) {
 	divCarouselInner.appendChild(divCarouselItem);
 }
 
-document.querySelector("#myCarousel").appendChild(divCarouselInner);
+document.querySelector("#carouselIspis").appendChild(divCarouselInner);
