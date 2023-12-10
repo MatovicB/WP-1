@@ -242,3 +242,73 @@ function prikaziPopup(uspesno) {
 
 	popup.fadeIn(500).delay(2000).fadeOut(500);
 }
+
+/* FACTORY ELEMENATA: */ /* Dinamicko kreiranje i pravljenje elemenata stranice About */
+
+function elementsFactory(tag, classes, idAttr = "", innerHTML = false) {
+	let tmpElement = document.createElement(tag);
+
+	if (Array.isArray(classes)) {
+		tmpElement.classList.add(...classes);
+	} else if (classes) {
+		tmpElement.classList.add(classes);
+	}
+
+	if (idAttr) {
+		tmpElement.setAttribute("id", idAttr);
+	}
+
+	tmpElement.innerHTML = innerHTML ? innerHTML : "";
+	return tmpElement;
+}
+function appendChildToParent(parent, child) {
+	return parent.appendChild(child);
+}
+
+let divClassContainer = elementsFactory("div", "container");
+let divClassRow = elementsFactory("div", "row");
+let divClassCol12 = elementsFactory("div", "col-md-12");
+let divCLassTitlePage = elementsFactory("div", [
+	"titlepage",
+	"text_align_center",
+]);
+let tagH2About = elementsFactory("h2", "", "", "O autoru");
+let divClassCol5 = elementsFactory("div", "col-md-5");
+let divClassAboutImg = elementsFactory("div", "about_img");
+let tagFigureAbout = elementsFactory("figure");
+let tagImgAbout = elementsFactory("img", ["img_responsive", "rounded"]);
+tagImgAbout.setAttribute("src", "images/about_me.jpg");
+tagImgAbout.setAttribute("alt", "Slika autora");
+
+let divClassCol7 = elementsFactory("div", [
+	"col-md-7",
+	"d_flex",
+	"flex-column",
+	"justify-content-center",
+	"text_align_center",
+]);
+let tagH1About = elementsFactory("h1", "", "", "Boban Matovic 93/20");
+let tagPAbout = elementsFactory("p", "", "", "Student: ");
+let tagStrong = elementsFactory(
+	"strong",
+	"",
+	"",
+	"AKADEMIJE TEHNIČKO-UMETNIČKIH STRUKOVNIH STUDIJA BEOGRAD"
+);
+
+appendChildToParent(tagPAbout, tagStrong);
+
+appendChildToParent(divClassCol7, tagH1About);
+appendChildToParent(divClassCol7, tagPAbout);
+
+appendChildToParent(tagFigureAbout, tagImgAbout);
+appendChildToParent(divClassAboutImg, tagFigureAbout);
+appendChildToParent(divClassCol5, divClassAboutImg);
+appendChildToParent(divCLassTitlePage, tagH2About);
+appendChildToParent(divClassCol12, divCLassTitlePage);
+appendChildToParent(divClassRow, divClassCol12);
+appendChildToParent(divClassRow, divClassCol5);
+appendChildToParent(divClassRow, divClassCol7);
+appendChildToParent(divClassContainer, divClassRow);
+
+document.getElementById("ispisAbout").appendChild(divClassContainer);
