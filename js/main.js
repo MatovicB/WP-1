@@ -311,4 +311,6 @@ appendChildToParent(divClassRow, divClassCol5);
 appendChildToParent(divClassRow, divClassCol7);
 appendChildToParent(divClassContainer, divClassRow);
 
-document.getElementById("ispisAbout").appendChild(divClassContainer);
+if (document.getElementById("ispisAbout")) {
+	document.getElementById("ispisAbout").appendChild(divClassContainer);
+} else "";
