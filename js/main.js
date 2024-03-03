@@ -14,6 +14,13 @@ var nizNavigacioniMeniTekst = [
 	"Kontakt",
 	"Dokumentacija",
 ];
+nizKontaktFooterText = [
+ 	"Pozovite +01 1234567890",
+ 	"boban.matovic.93.20@ict.edu.rs",
+];
+nizKontaktFooterSrc = ["images/call.png", "images/mall.png"];
+nizKontaktFooterAlt = ["Slika telefona", "Slika email-a"];
+
 var navigacioniMeniHTML = document.querySelector("#mySidepanel");
 
 var ispisNavigacioniMeni = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>`;
@@ -25,9 +32,85 @@ for (let i = 0; i < nizNavigacioniMeniHref.length; i++) {
 
 navigacioniMeniHTML.innerHTML = ispisNavigacioniMeni;
 
+/************** START Header ****************/
+
+// Kreiranje header elementa preko HTML-a
+const header = document.querySelector('header');
+
+// Kreiranje div taga sa klasom "head-top" korišćenjem funkcije elementsFactory
+const headTopDiv = elementsFactory('div', 'head-top');
+appendChildToParent(header, headTopDiv);
+
+// Kreiranje div taga sa klasom "container-fluid" korišćenjem funkcije elementsFactory
+const containerFluidDiv = elementsFactory('div', 'container-fluid');
+appendChildToParent(headTopDiv, containerFluidDiv);
+
+// Kreiranje div taga sa klasom "row d_flex" korišćenjem funkcije elementsFactory
+const rowDiv = elementsFactory('div', ['row', 'd_flex']);
+appendChildToParent(containerFluidDiv, rowDiv);
+
+// Kreiranje div taga sa klasom "col-sm-3" korišćenjem funkcije elementsFactory
+const colSm3Div = elementsFactory('div', 'col-sm-3');
+appendChildToParent(rowDiv, colSm3Div);
+
+// Kreiranje div taga sa klasom "logo" korišćenjem funkcije elementsFactory
+const logoDiv = elementsFactory('div', 'logo');
+appendChildToParent(colSm3Div, logoDiv);
+
+// Kreiranje linka unutar div taga "logo" korišćenjem funkcije elementsFactory
+const logoLink = elementsFactory('a');
+logoLink.href = 'index.html';
+appendChildToParent(logoDiv, logoLink);
+
+// Kreiranje slike unutar linka korišćenjem funkcije elementsFactory
+const logoImage = elementsFactory('img');
+logoImage.src = 'images/logo.png';
+logoImage.alt = 'Logo';
+appendChildToParent(logoLink, logoImage);
+
+// Kreiranje div taga sa klasom "col-sm-9" korišćenjem funkcije elementsFactory
+const colSm9Div = elementsFactory('div', 'col-sm-9');
+appendChildToParent(rowDiv, colSm9Div);
+
+// Kreiranje liste korišćenjem funkcije elementsFactory
+const emailList = elementsFactory('ul', ['email', 'text_align_right']);
+appendChildToParent(colSm9Div, emailList);
+
+// Kreiranje prvog stavka liste korišćenjem funkcije elementsFactory
+const emailListItem1 = elementsFactory('li');
+const emailLink1 = elementsFactory('a');
+emailLink1.href = 'Javascript:void(0)';
+const emailIcon1 = elementsFactory('i', ['fa', 'fa-user']);
+appendChildToParent(emailLink1, emailIcon1);
+appendChildToParent(emailListItem1, emailLink1);
+appendChildToParent(emailList, emailListItem1);
+
+// Kreiranje drugog stavka liste korišćenjem funkcije elementsFactory
+const emailListItem2 = elementsFactory('li');
+const emailLink2 = elementsFactory('a');
+emailLink2.href = 'Javascript:void(0)';
+const emailIcon2 = elementsFactory('i', ['fa', 'fa-search']);
+appendChildToParent(emailLink2, emailIcon2);
+appendChildToParent(emailListItem2, emailLink2);
+appendChildToParent(emailList, emailListItem2);
+
+// Kreiranje trećeg stavka liste korišćenjem funkcije elementsFactory
+const emailListItem3 = elementsFactory('li');
+const menuButton = elementsFactory('button', 'openbtn');
+menuButton.setAttribute('onclick', 'openNav()');
+const menuButtonImage = elementsFactory('img');
+menuButtonImage.src = 'images/menu_btn.png';
+menuButtonImage.alt = 'Menu Button';
+appendChildToParent(menuButton, menuButtonImage);
+appendChildToParent(emailListItem3, menuButton);
+appendChildToParent(emailList, emailListItem3);
+
+/************** END Header ****************/
+
+
 /* Dinamicko Pravljenje i ispis Footer sekcije */
 
-let tagZaIspisFooter = document.getElementById("ispisFootera");
+let tagZaIspisFooter = document.querySelector('footer');
 
 let divTagFooter = document.createElement("div");
 divTagFooter.setAttribute("class", "footer");
@@ -53,12 +136,8 @@ divTagContaFooter.setAttribute("class", "conta text_align_center");
 let tagUlContaFooter = document.createElement("ul");
 tagUlContaFooter.setAttribute("id", "ispis_kontakt_footer");
 
-nizKontaktFooterText = [
-	"Pozovite +01 1234567890",
-	"boban.matovic.93.20@ict.edu.rs",
-];
-nizKontaktFooterSrc = ["images/call.png", "images/mall.png"];
-nizKontaktFooterAlt = ["Slika telefona", "Slika email-a"];
+
+
 
 let btnProvera = document.getElementById("btnProvera") || null;
 
