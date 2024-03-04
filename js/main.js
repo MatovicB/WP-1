@@ -4,7 +4,7 @@ var nizNavigacioniMeniHref = [
 	"games.html",
 	"tranner.html",
 	"contact.html",
-	"dokumentacija.pdf",
+	"dokumentacija_2.pdf",
 ];
 var nizNavigacioniMeniTekst = [
 	"Početna",
